@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Videos extends StatelessWidget {
+class PolypRemoval extends StatelessWidget {
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: const Text(''),
+          title: const Text('Polyp Removal Videos'),
           centerTitle: true,
+          toolbarHeight: 75,
         ),
         /*body: Center(
           child: ElevatedButton(
