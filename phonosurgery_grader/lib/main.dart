@@ -8,7 +8,10 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
-  Widget build(BuildContext context) => const MaterialApp(
-        home: HomeScreen(),
+  Widget build(BuildContext context) => MaterialApp(
+        theme: ThemeData(
+            visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        home: const HomeScreen(),
       );
 }

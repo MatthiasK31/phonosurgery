@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:phonosurgery_grader/screens/video%20screens/deep.dart';
 import 'package:phonosurgery_grader/screens/video%20screens/keratosis.dart';
 import 'package:phonosurgery_grader/screens/video%20screens/polyp.dart';
@@ -12,27 +11,25 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          backgroundColor: Color.fromARGB(255, 255, 242, 205),
+          backgroundColor: const Color.fromARGB(255, 68, 68, 68),
           appBar: AppBar(
             backgroundColor: Colors.red,
             centerTitle: true,
             title: const Text('PhonoGrader'),
-            shadowColor: Colors.black,
             titleTextStyle: const TextStyle(
-              color: Colors.black,
+              color: Colors.white,
               fontSize: 50,
             ),
             toolbarHeight: 75,
           ),
-          body: Container(
-              child: Padding(
+          body: Padding(
             padding: const EdgeInsets.all(10),
             child: GridView(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                mainAxisSpacing: 20,
-                crossAxisSpacing: 20,
-                childAspectRatio: 2,
+                mainAxisSpacing: 30,
+                crossAxisSpacing: 30,
+                childAspectRatio: 2.125,
               ),
               children: [
                 Container(
@@ -46,12 +43,12 @@ class HomeScreen extends StatelessWidget {
                       padding: const EdgeInsets.all(20),
                       primary: Colors.redAccent.withOpacity(0.1),
                     ),
-                    child: const Text('Gel Injection'),
+                    child: const Text('Injection Augmentation'),
                     onPressed: () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => GelInjection()));
+                              builder: (context) => const GelInjection()));
                     },
                   ),
                 ),
@@ -66,12 +63,13 @@ class HomeScreen extends StatelessWidget {
                       padding: const EdgeInsets.all(20),
                       primary: Colors.blueAccent.withOpacity(0.1),
                     ),
-                    child: const Text('Keratosis Removal'),
+                    child: const Text('Keratosis Resection'),
                     onPressed: () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => KeratosisRemoval()));
+                              builder: (context) =>
+                                  const KeratosisResection()));
                     },
                   ),
                 ),
@@ -86,12 +84,12 @@ class HomeScreen extends StatelessWidget {
                       padding: const EdgeInsets.all(20),
                       primary: Colors.yellowAccent.withOpacity(0.1),
                     ),
-                    child: const Text('Polyp Removal'),
+                    child: const Text('Polyp Resection'),
                     onPressed: () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => PolypRemoval()));
+                              builder: (context) => const PolypResection()));
                     },
                   ),
                 ),
@@ -106,18 +104,18 @@ class HomeScreen extends StatelessWidget {
                       padding: const EdgeInsets.all(20),
                       primary: Colors.greenAccent.withOpacity(0.1),
                     ),
-                    child: const Text('Deep Ressection'),
+                    child: const Text('Deep Vocal Fold Resection'),
                     onPressed: () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => DeepRessection()));
+                              builder: (context) => const DeepResection()));
                     },
                   ),
                 ),
               ],
             ),
-          ))),
+          )),
     );
   }
 }

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
-class PolypRemoval extends StatelessWidget {
+class PolypResection extends StatelessWidget {
+  const PolypResection({Key? key}) : super(key: key);
+
+  @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: const Text('Polyp Removal Videos'),
+          title: const Text('Polyp Resection Videos'),
           centerTitle: true,
           toolbarHeight: 75,
         ),

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
-class DeepRessection extends StatelessWidget {
+class DeepResection extends StatelessWidget {
+  const DeepResection({Key? key}) : super(key: key);
+
+  @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: const Text('Deep Ressection Videos'),
+          title: const Text('Deep Vocal Fold Resection Videos'),
           centerTitle: true,
           toolbarHeight: 75,
         ),
