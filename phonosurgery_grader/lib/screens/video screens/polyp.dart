@@ -5,6 +5,7 @@ class PolypResection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
+        backgroundColor: const Color.fromARGB(255, 68, 68, 68),
         appBar: AppBar(
           title: const Text('Polyp Resection Videos'),
           centerTitle: true,

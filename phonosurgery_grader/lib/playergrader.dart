@@ -1,5 +1,3 @@
-import 'package:better_player/better_player.dart';
-import 'package:video_player/video_player.dart';
 import './widgets/likerttable.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +9,6 @@ class PlayAndGrade extends StatelessWidget {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
 
-    print(screenWidth);
     return Scaffold(
         appBar: AppBar(
           title: const Text('Video Player and Likert Scale'),
@@ -26,9 +23,7 @@ class PlayAndGrade extends StatelessWidget {
               height: screenHeight,
               width: (screenWidth / 2) - 6.25,
               margin: const EdgeInsets.only(right: 5),
-              decoration: const BoxDecoration(
-                color: Colors.red,
-              ),
+              color: const Color.fromARGB(255, 68, 68, 68),
             ),
             const VerticalDivider(
               color: Colors.black,
@@ -41,9 +36,6 @@ class PlayAndGrade extends StatelessWidget {
               height: screenHeight,
               width: (screenWidth / 2) - 6.25,
               margin: const EdgeInsets.only(left: 5),
-              decoration: const BoxDecoration(
-                color: Colors.amber,
-              ),
               child: TableView(),
             ),
           ],

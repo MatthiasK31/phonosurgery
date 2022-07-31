@@ -5,6 +5,7 @@ class DeepResection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
+        backgroundColor: const Color.fromARGB(255, 68, 68, 68),
         appBar: AppBar(
           title: const Text('Deep Vocal Fold Resection Videos'),
           centerTitle: true,

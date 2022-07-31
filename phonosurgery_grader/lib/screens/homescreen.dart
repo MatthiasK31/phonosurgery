@@ -13,7 +13,7 @@ class HomeScreen extends StatelessWidget {
       home: Scaffold(
           backgroundColor: const Color.fromARGB(255, 68, 68, 68),
           appBar: AppBar(
-            backgroundColor: Colors.red,
+            backgroundColor: Color.fromARGB(255, 106, 106, 106),
             centerTitle: true,
             title: const Text('PhonoGrader'),
             titleTextStyle: const TextStyle(
@@ -35,7 +35,7 @@ class HomeScreen extends StatelessWidget {
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Colors.red,
+                    color: Color.fromARGB(255, 2, 118, 151),
                   ),
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
@@ -55,7 +55,7 @@ class HomeScreen extends StatelessWidget {
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Colors.blue,
+                    color: Color.fromARGB(255, 91, 144, 145),
                   ),
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
@@ -76,7 +76,7 @@ class HomeScreen extends StatelessWidget {
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Colors.yellow,
+                    color: Color.fromARGB(255, 93, 142, 154),
                   ),
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
@@ -96,7 +96,7 @@ class HomeScreen extends StatelessWidget {
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Colors.green,
+                    color: Color.fromARGB(255, 2, 151, 110),
                   ),
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
