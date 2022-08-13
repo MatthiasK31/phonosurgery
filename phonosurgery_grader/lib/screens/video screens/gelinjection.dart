@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:phonosurgery_grader/screens/playergrader.dart';
 import 'package:phonosurgery_grader/widgets/likerttable.dart';
 
 class GelInjection extends StatelessWidget {
@@ -23,7 +24,7 @@ class GelInjection extends StatelessWidget {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => TableView(),
+                  builder: (context) => PlayAndGrade(),
                 ));
           },
         ),

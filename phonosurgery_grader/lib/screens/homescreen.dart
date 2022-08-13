@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:phonosurgery_grader/screens/video%20screens/deep.dart';
 import 'package:phonosurgery_grader/screens/video%20screens/keratosis.dart';
 import 'package:phonosurgery_grader/screens/video%20screens/polyp.dart';
-import 'package:phonosurgery_grader/videoplayer.dart';
+import 'package:phonosurgery_grader/widgets/videoplayer.dart';
 import './video screens/gelinjection.dart';
 
 class HomeScreen extends StatelessWidget {
