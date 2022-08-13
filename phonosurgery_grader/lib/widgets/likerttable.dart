@@ -53,7 +53,7 @@ class _TableViewState extends State<TableView> {
               color: Color.fromARGB(255, 2, 151, 147),
               //borderRadius: BorderRadius.circular(10),
             ),
-            width: 895,
+            width: 894,
             //alignment: FractionalOffset.bottomRight,
             child: Column(
               //mainAxisAlignment: MainAxisAlignment.end,
@@ -67,6 +67,12 @@ class _TableViewState extends State<TableView> {
                   child: Row(children: [
                     Container(
                       alignment: FractionalOffset.center,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.black,
+                          width: 2,
+                        ),
+                      ),
                       width: 275.0,
                       height: 75,
                       child: Text(
@@ -82,15 +88,22 @@ class _TableViewState extends State<TableView> {
                               decoration: BoxDecoration(
                                 color: Color.fromARGB(255, 2, 151, 147),
                                 border: Border(
-                                  left: BorderSide(color: Colors.white),
-                                  //right: BorderSide(color: Colors.white),
+                                  right: BorderSide(
+                                    color: Colors.black,
+                                    width: 2,
+                                  ),
+                                  top: BorderSide(
+                                    color: Colors.black,
+                                    width: 2,
+                                  ),
+                                  bottom: BorderSide(
+                                    color: Colors.black,
+                                    width: 2,
+                                  ),
                                 ),
                               ),
                               width: 123.5,
                               height: 75,
-                              margin: EdgeInsets.all(0.0),
-                              padding: const EdgeInsets.only(
-                                  top: 5.0, bottom: 5.0, right: 3.0, left: 3.0),
                               child: Text(
                                 header,
                                 style: TextStyle(color: Colors.white),
@@ -113,26 +126,60 @@ class _TableViewState extends State<TableView> {
     double screenWidth = (MediaQuery.of(context).size.width) / 2;
     screenWidth -= 5;
 
-    List<Widget> allRows = []; //For Saving all Created Rows
-    //List<List<String>> criteria = {[''],[],[],[],[],[],};
+    List<Widget> allRadioRows = []; //For Saving all Created Rows
+    List<List<String>> criteria = [
+      [
+        'Frequently used unnecessary force on tissue or caused damage by inapropriate use of instruments',
+        'Careful handling of tissue but occasionally caused inadvertent damage',
+        'Consistently handles tissues appropriately with minimal damage',
+      ],
+      [
+        'Many unnecessary moves',
+        'Efficient time/motion but contains some unnecessary moves',
+        'Clear economy of movement and maximum efficiency',
+      ],
+      [
+        'Repeatedly made tentative or awkward moves with instruments by inappropriate use of instruments',
+        'Competent use of instruments but occasionally appeared stiff or awkward',
+        'Fluid movements with instruments without awkwardness',
+      ],
+      [
+        'Frequently stopped procedure and seemed unsure of next move',
+        'Demonstrated some forward planning with reasonable progression of procedure',
+        'Obviously planned course of procedure with effortless flow from one movement to the next',
+      ],
+      [
+        'Unable to obtain adequate initial exposure of surgical field. Frequent intra-operative adjustments',
+        'Demonstrated good exposure with partial/impeded views of some structures; minor intra-operative adjustments',
+        'Demonstrated excellent exposure of operative field without intra-operative adjustment',
+      ],
+      [
+        'Deficient knowledge. Needed specific instructions at most steps',
+        'Knew all important steps of procedure',
+        'Demonstrated familiarity with all aspects of operation',
+      ],
+    ];
 
     for (int i = 0; i < rowHeaders.length; i++) {
-      List<Widget> singleRow = []; //For creating a single row
+      List<Widget> radioRow = []; //For creating a single row of radiobuttons
+      List<Widget> criteriaRow = []; //For creating a single row of criteria
+      var criteriaPos = 0;
       for (int j = 0; j < columnHeaders.length; j++) {
-        singleRow.add(
+        radioRow.add(
           Container(
-            width: 123.5,
-            height: 100,
+            width: 124,
+            height: 50,
             decoration: BoxDecoration(
               color: Colors.white,
-              border: Border.all(color: Colors.red),
+              border: Border(
+                right: BorderSide(
+                  color: j == (columnHeaders.length - 1)
+                      ? Colors.black
+                      : Colors.white,
+                  width: 2,
+                ),
+              ),
             ),
-            /* padding: const EdgeInsets.only(
-              top: 6.0,
-              bottom: 6.0,
-              right: 3.0,
-              left: 3.0,
-            ), */
             child: Column(
               children: [
                 Radio(
@@ -149,57 +196,124 @@ class _TableViewState extends State<TableView> {
                     });
                   },
                 ),
-                Text('jalksjflasdlfa'),
               ],
             ),
           ),
-        ); //singleRow add function
-      }
-      //Adding single Row to allRows widget
-      allRows.add(
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
+        ); //radioRow add function
+
+        if ((j + 1) % 2 != 0) {
+          criteriaRow.add(
             Container(
-              width: (screenWidth - 900) / 2 + 2.5,
-              color: Color.fromARGB(255, 68, 68, 68),
-            ),
-            Column(
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 2, 151, 147),
-                    //borderRadius: BorderRadius.circular(10),
+              width: 206.5,
+              height: 85,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                border: Border(
+                  right: BorderSide(
+                    color: j == (columnHeaders.length - 1)
+                        ? Colors.black
+                        : Colors.white,
+                    width: 2,
                   ),
-                  alignment: FractionalOffset.centerLeft,
-                  width: 275.0,
-                  height: 50,
-                  padding: const EdgeInsets.only(
-                      top: 6.0, bottom: 6.0, right: 3.0, left: 10.0),
-                  child: Text(
-                    rowHeaders[i],
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 15,
-                    ),
-                    textAlign: TextAlign.left,
+                  bottom: BorderSide(
+                    color: Colors.black,
+                    width: 2,
                   ),
                 ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 2, 151, 147),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    criteria[i][criteriaPos],
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 13,
+                    ),
                   ),
-                  alignment: FractionalOffset.centerLeft,
-                  width: 275.0,
-                  height: 50,
+                ],
+              ),
+            ),
+          ); //criteriaRow add function
+          criteriaPos++;
+        }
+      }
+
+      //Adding single Row to allRadioRows widget
+      allRadioRows.add(
+        Row(
+          //crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Column(
+              children: [
+                Row(
+                  children: [
+                    SizedBox(
+                      width: (screenWidth - 892.5) / 2 - 2,
+                      height: 135,
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 2, 151, 147),
+                        border: Border(
+                          left: BorderSide(
+                            color: Colors.black,
+                            width: 2,
+                          ),
+                          right: BorderSide(
+                            color: Colors.black,
+                            width: 2,
+                          ),
+                          bottom: BorderSide(
+                            color: Colors.black,
+                            width: 2,
+                          ),
+                        ),
+                      ),
+                      alignment: FractionalOffset.centerLeft,
+                      width: 275.0,
+                      height: 135,
+                      padding: const EdgeInsets.only(
+                          top: 6.0, bottom: 6.0, right: 3.0, left: 10.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            rowHeaders[i],
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                            ),
+                            textAlign: TextAlign.left,
+                          )
+                        ],
+                      ),
+                    ),
+                    Column(
+                      children: [
+                        Row(
+                          //for the radio button row
+                          children: [
+                            ...radioRow,
+                          ],
+                        ),
+                        Row(
+                          //for the score description row
+                          children: [
+                            ...criteriaRow,
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ],
             ),
-            ...singleRow //adds everything to the singleRow widget list
-          ], //Add single row here
+          ], //Add ONE row here
         ),
       );
     }
-    return allRows; //Return all single rows
+    return allRadioRows; //Return all single rows
   }
 }
