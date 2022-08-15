@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:phonosurgery_grader/screens/playergrader.dart';
+import 'package:phonosurgery_grader/screens/interfaces/playergrader.dart';
 import 'package:phonosurgery_grader/widgets/likerttable.dart';
 
 class GelInjection extends StatelessWidget {

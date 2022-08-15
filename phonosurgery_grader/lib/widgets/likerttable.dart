@@ -41,8 +41,6 @@ class _TableViewState extends State<TableView> {
 
   @override
   Widget build(BuildContext context) {
-    //double screenWidth = MediaQuery.of(context).size.width;
-
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 68, 68, 68),
       body: Column(
@@ -61,57 +59,61 @@ class _TableViewState extends State<TableView> {
                 //headers
                 Container(
                   decoration: BoxDecoration(
-                      borderRadius:
-                          BorderRadius.only(topLeft: Radius.circular(10))),
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(10),
+                    ),
+                  ),
                   margin: EdgeInsets.all(0.0),
-                  child: Row(children: [
-                    Container(
-                      alignment: FractionalOffset.center,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Colors.black,
-                          width: 2,
+                  child: Row(
+                    children: [
+                      Container(
+                        alignment: FractionalOffset.center,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.black,
+                            width: 2,
+                          ),
+                        ),
+                        width: 275.0,
+                        height: 75,
+                        child: Text(
+                          //Leave an empty text in Row(0) and Column (0)
+                          "PARAMETER",
+                          style: TextStyle(color: Colors.white),
+                          textAlign: TextAlign.center,
                         ),
                       ),
-                      width: 275.0,
-                      height: 75,
-                      child: Text(
-                        //Leave an empty text in Row(0) and Column (0)
-                        "PARAMETER",
-                        style: TextStyle(color: Colors.white),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                    ...columnHeaders
-                        .map((header) => Container(
-                              alignment: FractionalOffset.center,
-                              decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 2, 151, 147),
-                                border: Border(
-                                  right: BorderSide(
-                                    color: Colors.black,
-                                    width: 2,
-                                  ),
-                                  top: BorderSide(
-                                    color: Colors.black,
-                                    width: 2,
-                                  ),
-                                  bottom: BorderSide(
-                                    color: Colors.black,
-                                    width: 2,
+                      ...columnHeaders
+                          .map((header) => Container(
+                                alignment: FractionalOffset.center,
+                                decoration: BoxDecoration(
+                                  color: Color.fromARGB(255, 2, 151, 147),
+                                  border: Border(
+                                    right: BorderSide(
+                                      color: Colors.black,
+                                      width: 2,
+                                    ),
+                                    top: BorderSide(
+                                      color: Colors.black,
+                                      width: 2,
+                                    ),
+                                    bottom: BorderSide(
+                                      color: Colors.black,
+                                      width: 2,
+                                    ),
                                   ),
                                 ),
-                              ),
-                              width: 123.5,
-                              height: 75,
-                              child: Text(
-                                header,
-                                style: TextStyle(color: Colors.white),
-                                textAlign: TextAlign.left,
-                              ),
-                            ))
-                        .toList()
-                  ]),
+                                width: 123.5,
+                                height: 75,
+                                child: Text(
+                                  header,
+                                  style: TextStyle(color: Colors.white),
+                                  textAlign: TextAlign.left,
+                                ),
+                              ))
+                          .toList()
+                    ],
+                  ),
                 ),
               ],
             ),

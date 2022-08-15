@@ -1,0 +1,9 @@
+C:/Users/matth/vscode/build/CMakeFiles/Experimental.dir
+C:/Users/matth/vscode/build/CMakeFiles/Nightly.dir
+C:/Users/matth/vscode/build/CMakeFiles/Continuous.dir
+C:/Users/matth/vscode/build/CMakeFiles/NightlyMemoryCheck.dir
+C:/Users/matth/vscode/build/CMakeFiles/phonosurgery_grader.dir
+C:/Users/matth/vscode/build/CMakeFiles/PACKAGE.dir
+C:/Users/matth/vscode/build/CMakeFiles/RUN_TESTS.dir
+C:/Users/matth/vscode/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/matth/vscode/build/CMakeFiles/ZERO_CHECK.dir
